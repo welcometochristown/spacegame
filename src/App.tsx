@@ -1,8 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "./logo.svg";
 import "./App.css";
-import Game from "./game/Game";
+import Game from "./Game/Game";
 
 const App: React.FC = () => {
   return (

@@ -4,12 +4,29 @@ export interface INameable {
 
 export interface IPlayer extends INameable {
   race: string;
+  credits: number;
 }
 export interface INpc extends IPlayer {}
 export interface IHuman extends IPlayer {}
 
+export enum BUILDING_TYPE {
+  SHIPYARD,
+}
+
+export interface IBuilding {
+  owner: IPlayer;
+  type: BUILDING_TYPE;
+}
+
+export interface ICity extends INameable {
+  id: number;
+  building?: IBuilding;
+}
+
 export interface IPlanet extends INameable {
-  resourceQuantities?: IResourceQuantity[];
+  id: number;
+  cities: ICity[];
+  resourceQuantities: IResourceQuantity[];
   galaxyCoordinate: ICoordinate;
 }
 
@@ -33,4 +50,8 @@ export interface IGameState {
 export interface ICoordinate {
   x: number;
   y: number;
+}
+
+export interface IOptions {
+  option1: string;
 }
